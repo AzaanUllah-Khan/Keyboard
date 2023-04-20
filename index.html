@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard || Virtual Keyboard</title>
+    <link rel="icon"
+        href="https://play-lh.googleusercontent.com/-T9LWvUtdAT4faOMnIOy0oInlZNPYquWJLFE1P0kL_R-WQvCK3nIdkqtZMkiHdCk9seW">
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .input {
+            width: 90%;
+            padding: 20px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .input input {
+            height: 50px;
+            width: 100%;
+            background-color: transparent;
+            border: 2px solid #333;
+            outline: none;
+            margin-right: 20px;
+            padding: 5px 20px 5px 10px;
+            font-size: 24px;
+            border-radius: 20px;
+        }
+
+        .copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .copy h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 16px;
+            opacity: 0.4;
+            font-weight: lighter;
+            display: none;
+        }
+
+        .copy i {
+            font-size: 30px;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .keyboard {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .row {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1px;
+        }
+
+        .keyboard button {
+            width: 20%;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #333;
+            transform: scale(0.95);
+        }
+        
+        .keyboard button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .keyboard button:active {
+            transform: scale(1);
+        }
+        .keyboard .Enter{
+            width: 40%;
+        }
+        .keyboard .Back{
+            width: 35%;
+        }
+        .keyboard .Shift{
+            width: 45%;
+        }
+        .keyboard .Space{
+            width: 100%;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="input">
+            <input type="text" name="display" id="d" placeholder="Type.." readonly>
+            <div class="copy">
+                <i class="fa fa-copy" onclick="copyInputField()"></i>
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="row">
+                <button type="button" value="`" class="sm key" onclick="display.value += this.value">`</button>
+                <button type="button" value="1" class="key" onclick="display.value += this.value">1</button>
+                <button type="button" value="2" class="key" onclick="display.value += this.value">2</button>
+                <button type="button" value="3" class="key" onclick="display.value += this.value">3</button>
+                <button type="button" value="4" class="key" onclick="display.value += this.value">4</button>
+                <button type="button" value="5" class="key" onclick="display.value += this.value">5</button>
+                <button type="button" value="6" class="key" onclick="display.value += this.value">6</button>
+                <button type="button" value="7" class="key" onclick="display.value += this.value">7</button>
+                <button type="button" value="8" class="key" onclick="display.value += this.value">8</button>
+                <button type="button" value="9" class="key" onclick="display.value += this.value">9</button>
+                <button type="button" value="0" class="key" onclick="display.value += this.value">0</button>
+                <button type="button" value="-" class="key" onclick="display.value += this.value">-</button>
+                <button type="button" value="=" class="key" onclick="display.value += this.value">=</button>
+                <button type="button" value="BackSpace" class="Back"
+                    onclick="display.value = display.value.toString().slice(0,-1)">BackSpace</button>
+            </div>
+            <div class="row">
+                <button type="button" value="Tab" class="key">Tab</button>
+                <button type="button" value="q" class="key" onclick="display.value += this.value">q</button>
+                <button type="button" value="w" class="key" onclick="display.value += this.value">w</button>
+                <button type="button" value="e" class="key" onclick="display.value += this.value">e</button>
+                <button type="button" value="r" class="key" onclick="display.value += this.value">r</button>
+                <button type="button" value="t" class="key" onclick="display.value += this.value">t</button>
+                <button type="button" value="y" class="key" onclick="display.value += this.value">y</button>
+                <button type="button" value="u" class="key" onclick="display.value += this.value">u</button>
+                <button type="button" value="i" class="key" onclick="display.value += this.value">i</button>
+                <button type="button" value="o" class="key" onclick="display.value += this.value">o</button>
+                <button type="button" value="p" class="key" onclick="display.value += this.value">p</button>
+                <button type="button" value="[" class="key" onclick="display.value += this.value">[</button>
+                <button type="button" value="]" class="key" onclick="display.value += this.value">]</button>
+                <button type="button" value="\" class="key" onclick="display.value += this.value">\</button>
+
+            </div>
+            <div class="row">
+                <button type="button" value="CapsLock" class="key">CapsLock</button>
+                <button type="button" value="a" class="key" onclick="display.value += this.value">a</button>
+                <button type="button" value="s" class="key" onclick="display.value += this.value">s</button>
+                <button type="button" value="d" class="key" onclick="display.value += this.value">d</button>
+                <button type="button" value="f" class="key" onclick="display.value += this.value">f</button>
+                <button type="button" value="g" class="key" onclick="display.value += this.value">g</button>
+                <button type="button" value="h" class="key" onclick="display.value += this.value">h</button>
+                <button type="button" value="j" class="key" onclick="display.value += this.value">j</button>
+                <button type="button" value="k" class="key" onclick="display.value += this.value">k</button>
+                <button type="button" value="l" class="key" onclick="display.value += this.value">l</button>
+                <button type="button" value=";" class="key" onclick="display.value += this.value">;</button>
+                <button type="button" value="'" class="key" onclick="display.value += this.value">'</button>
+                <button type="button" value="Enter" class="key Enter">Enter</button>
+
+            </div>
+            <div class="row">
+                <button type="button" value="Shift" id="shift" class="Shift">Shift</button>
+                <button type="button" value="z" class="key" onclick="display.value += this.value">z</button>
+                <button type="button" value="x" class="key" onclick="display.value += this.value">x</button>
+                <button type="button" value="c" class="key" onclick="display.value += this.value">c</button>
+                <button type="button" value="v" class="key" onclick="display.value += this.value">v</button>
+                <button type="button" value="b" class="key" onclick="display.value += this.value">b</button>
+                <button type="button" value="n" class="key" onclick="display.value += this.value">n</button>
+                <button type="button" value="m" class="key" onclick="display.value += this.value">m</button>
+                <button type="button" value="," class="key" onclick="display.value += this.value">,</button>
+                <button type="button" value="." class="key" onclick="display.value += this.value">.</button>
+                <button type="button" value="/" class="key" onclick="display.value += this.value">/</button>
+                <button type="button" value="Shift" class="Shift">Shift</button>
+
+            </div>
+            <div class="row">
+                <button type="button" value="Ctrl">Ctrl</button>
+                <button type="button" value="⊞ Win">⊞ Win</button>
+                <button type="button" value="Alt">Alt</button>
+                <button type="button" value="Space Bar" class="Space" onclick="display.value += ' '">Space Bar</button>
+                <button type="button" value="Alt">Alt</button>
+                <button type="button" value="⊞ Win">⊞ Win</button>
+                <button type="button" value="|-|">|-|</button>
+                <button type="button" value="Ctrl">Ctrl</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        function copyInputField() {
+            var inputField = document.getElementById("d");
+            inputField.select();
+            document.execCommand("copy");
+            alert("Text copied: " + inputField.value);
+            inputField.value = ""
+        }
+        const keys = document.querySelectorAll('.key');
+        const shiftButton = document.querySelector('#shift');
+        let shifted = false;
+
+        function toggleShift() {
+            shifted = !shifted;
+            updateKeys();
+        }
+
+        function updateKeys() {
+            keys.forEach(key => {
+                const value = key.value;
+                if (shifted) {
+                    key.textContent = shiftKey(value);
+                    key.value = shiftKey(value);
+                } else {
+                    key.textContent = small(value);
+                    key.value = small(value);
+                }
+            });
+        }
+
+        function shiftKey(key) {
+            switch (key) {
+                case '`': return '~';
+                case '1': return '!';
+                case '2': return '@';
+                case '3': return '#';
+                case '4': return '$';
+                case '5': return '%';
+                case '6': return '^';
+                case '7': return '&';
+                case '8': return '*';
+                case '9': return '(';
+                case '0': return ')';
+                case '-': return '_';
+                case '=': return '+';
+                case 'q': return 'Q';
+                case 'w': return 'W';
+                case 'e': return 'E';
+                case 'r': return 'R';
+                case 't': return 'T';
+                case 'y': return 'Y';
+                case 'u': return 'U';
+                case 'i': return 'I';
+                case 'o': return 'O';
+                case 'p': return 'P';
+                case '[': return '{';
+                case ']': return '}';
+                case 'a': return 'A';
+                case 's': return 'S';
+                case 'd': return 'D';
+                case 'f': return 'F';
+                case 'g': return 'G';
+                case 'h': return 'H';
+                case 'j': return 'J';
+                case 'k': return 'K';
+                case 'l': return 'L';
+                case ';': return ':';
+                case "'": return '"';
+                case 'z': return 'Z';
+                case 'x': return 'X';
+                case 'c': return 'C';
+                case 'v': return 'V';
+                case 'b': return 'B';
+                case 'n': return 'N';
+                case 'm': return 'M';
+                case ',': return '<';
+                case '.': return '>';
+                case '/': return '?';
+                default: return key;
+            }
+        }
+
+        function small(key) {
+            switch (key) {
+                case '~': return '`';
+                case '!': return '1';
+                case '@': return '2';
+                case '#': return '3';
+                case '$': return '4';
+                case '%': return '5';
+                case '^': return '6';
+                case '&': return '7';
+                case '*': return '8';
+                case '(': return '9';
+                case ')': return '0';
+                case '_': return '-';
+                case '+': return '=';
+                case 'Q': return 'q';
+                case 'W': return 'w';
+                case 'E': return 'e';
+                case 'R': return 'r';
+                case 'T': return 't';
+                case 'Y': return 'y';
+                case 'U': return 'u';
+                case 'I': return 'i';
+                case 'O': return 'o';
+                case 'P': return 'p';
+                case '{': return '[';
+                case '}': return ']';
+                case 'A': return 'a';
+                case 'S': return 's';
+                case 'D': return 'd';
+                case 'F': return 'f';
+                case 'G': return 'g';
+                case 'H': return 'h';
+                case 'J': return 'j';
+                case 'K': return 'k';
+                case 'L': return 'l';
+                case ':': return ';';
+                case '"': return "'";
+                case 'Z': return 'z';
+                case 'X': return 'x';
+                case 'C': return 'c';
+                case 'V': return 'v';
+                case 'B': return 'b';
+                case 'N': return 'n';
+                case 'M': return 'm';
+                case '<': return ',';
+                case '>': return '.';
+                case '?': return '/';
+                default: return key;
+            }
+        }
+        shiftButton.addEventListener('click', toggleShift);
+    </script>
+</body>
+
+</html>
